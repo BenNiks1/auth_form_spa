@@ -17,6 +17,7 @@ export const SignUpForm: FC = () => {
   const { t } = useTranslation()
   const navigate = useNavigate()
 
+  const [isLoading, setIsLoading] = useState(false)
   const [isValid, setIsValid] = useState(false)
   const [formData, setFormData] = useState<FormData>({
     user: '',
@@ -76,7 +77,12 @@ export const SignUpForm: FC = () => {
 
     if (isValid) {
       console.log('form', formData)
-      navigate('/')
+      setIsLoading(true)
+
+      setTimeout(() => {
+        navigate('/')
+        setIsLoading(false)
+      }, 500)
     }
   }
 
@@ -162,10 +168,8 @@ export const SignUpForm: FC = () => {
             className={styles.form__buttons_item}
             elementType='submit'
             ariaLabel={t('continue')}
-            onClick={() => {
-              validate()
-              console.log('click')
-            }}
+            isLoading={isLoading}
+            onClick={validate}
           >
             {t('continue')}
           </UiButton>

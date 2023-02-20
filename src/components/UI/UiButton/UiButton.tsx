@@ -6,6 +6,7 @@ interface UiButtonProps {
   children: ReactNode
   ariaLabel: string
   disabled?: boolean
+  isLoading?: boolean
   prevent?: boolean
   elementType?: any
   style?: Style
@@ -23,6 +24,7 @@ interface Style {
 export const UiButton: FC<UiButtonProps> = ({
   children,
   disabled,
+  isLoading,
   prevent,
   elementType = 'button',
   className,
@@ -41,6 +43,10 @@ export const UiButton: FC<UiButtonProps> = ({
       return typeof onClick !== 'undefined' && onClick(e)
     }}
   >
-    {children}
+    <span className={styles.button__inner}>
+      {isLoading && <div className={styles.is_loading} />}
+
+      {children}
+    </span>
   </button>
 )

@@ -19,6 +19,7 @@ export const SignInForm: FC = () => {
   const navigate = useNavigate()
   const { t } = useTranslation()
 
+  const [isLoading, setIsLoading] = useState(false)
   const [isError, setIsError] = useState({
     value: false,
     error: t('signInDataError'),
@@ -39,7 +40,14 @@ export const SignInForm: FC = () => {
   const submit = async (e: SyntheticEvent) => {
     e.preventDefault()
 
-    if (!isError.value) onLogin(formData)
+    if (!isError.value) {
+      setIsLoading(true)
+
+      setTimeout(() => {
+        onLogin(formData)
+        setIsLoading(false)
+      }, 500)
+    }
   }
 
   return (
@@ -100,6 +108,7 @@ export const SignInForm: FC = () => {
             className={styles.form__buttons_item}
             elementType='submit'
             ariaLabel={t('logIn')}
+            isLoading={isLoading}
             onClick={validate}
           >
             {t('logIn')}
