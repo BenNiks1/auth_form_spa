@@ -27,5 +27,7 @@ export default {
     repeadPass: 'Repeat password',
     showPass: 'Show password',
     hidePass: 'Hide password',
+    logout: 'Logout',
+    accessDenied: 'You do not have access to this page. Please login',
   },
 }

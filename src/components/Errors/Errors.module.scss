@@ -1,0 +1,15 @@
+.access_denied {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: white;
+
+  &__subtitle {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-align: center;
+  }
+}

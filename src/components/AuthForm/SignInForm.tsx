@@ -1,17 +1,21 @@
 import { FC, SyntheticEvent, useState } from 'react'
 import cn from 'classnames'
 import { useNavigate } from 'react-router-dom'
-import { AuthStep } from '@/helpers/constant'
-import { UiForm, UiButton, UiInput } from '@/components'
-import styles from './AuthForm.module.scss'
 import { useTranslation } from 'react-i18next'
+import { AuthStep, emailRegex } from '@/helpers/constant'
+import { UiForm, UiButton, UiInput } from '@/components'
+import { useAuth } from 'hooks/useAuth'
+import styles from './AuthForm.module.scss'
 
-interface FormData {
+export interface FormData {
   email: string
   pass: string
 }
 
 export const SignInForm: FC = () => {
+  // @ts-expect-error
+  const { onLogin } = useAuth()
+
   const navigate = useNavigate()
   const { t } = useTranslation()
 
@@ -22,16 +26,20 @@ export const SignInForm: FC = () => {
 
   const [formData, setFormData] = useState<FormData>({ email: '', pass: '' })
 
-  const validate = (data: FormData) => {
-    if (data.pass !== '123') {
+  const validate = () => {
+    if (
+      !formData.email.length ||
+      !formData.pass.length ||
+      !emailRegex.test(formData.email)
+    ) {
       setIsError({ ...isError, value: true })
     } else setIsError({ ...isError, value: false })
   }
 
-  const submit = (e: SyntheticEvent) => {
+  const submit = async (e: SyntheticEvent) => {
     e.preventDefault()
-    validate(formData)
-    console.log('form', formData)
+
+    if (!isError.value) onLogin(formData)
   }
 
   return (
@@ -92,6 +100,7 @@ export const SignInForm: FC = () => {
             className={styles.form__buttons_item}
             elementType='submit'
             ariaLabel={t('logIn')}
+            onClick={validate}
           >
             {t('logIn')}
           </UiButton>
