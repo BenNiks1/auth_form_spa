@@ -1,0 +1,37 @@
+.container {
+  position: relative;
+  display: flex;
+  width: 200px;
+  height: 48px;
+  border-radius: 5px;
+  overflow: hidden;
+
+  &::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 16px;
+    background-color: var(--gray);
+    transition: 0.25s all ease;
+    pointer-events: none;
+    color: var(--base-color);
+  }
+
+  .select {
+    appearance: none;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    flex: 1;
+    padding: 0 16px;
+    color: var(--base-color);
+    background-color: var(--white);
+    background-image: none;
+    cursor: pointer;
+
+    &::-ms-expand {
+      display: none;
+    }
+  }
+}
