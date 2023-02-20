@@ -1,10 +1,10 @@
 import { ChangeEvent, FC, SyntheticEvent, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+import { DefaultTFuncReturn } from 'i18next'
 import { useNavigate } from 'react-router-dom'
 import { emailRegex, AuthStep, passwordRegex } from '@/helpers/constant'
 import { UiForm, UiButton, UiInput } from '@/components'
 import styles from './AuthForm.module.scss'
-import { useTranslation } from 'react-i18next'
-import { DefaultTFuncReturn } from 'i18next'
 
 interface FormData {
   user: string
@@ -74,7 +74,10 @@ export const SignUpForm: FC = () => {
   const submit = (e: SyntheticEvent) => {
     e.preventDefault()
 
-    if (isValid) console.log('form', formData)
+    if (isValid) {
+      console.log('form', formData)
+      navigate('/')
+    }
   }
 
   return (

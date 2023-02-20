@@ -1,9 +1,9 @@
 import { FC, SyntheticEvent, useState } from 'react'
-import { UiForm, UiButton, UiInput } from '@/components'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import { UiForm, UiButton, UiInput } from '@/components'
 import { AuthStep, emailRegex } from '@/helpers/constant'
 import styles from './AuthForm.module.scss'
-import { useTranslation } from 'react-i18next'
 
 export const ResetPassword: FC = () => {
   const { t } = useTranslation()
@@ -26,7 +26,10 @@ export const ResetPassword: FC = () => {
 
   const submit = (e: SyntheticEvent) => {
     e.preventDefault()
-    if (!error.isError) console.log('formData', email)
+    if (!error.isError) {
+      console.log('email', email)
+      navigate('/')
+    }
   }
   return (
     <UiForm
