@@ -10,6 +10,7 @@ export const ResetPassword: FC = () => {
 
   const navigate = useNavigate()
 
+  const [isLoading, setIsLoading] = useState(false)
   const [email, setEmail] = useState<string>('')
   const [error, setError] = useState({ isError: false, name: '' })
 
@@ -27,8 +28,13 @@ export const ResetPassword: FC = () => {
   const submit = (e: SyntheticEvent) => {
     e.preventDefault()
     if (!error.isError) {
+      setIsLoading(true)
       console.log('email', email)
-      navigate('/')
+
+      setTimeout(() => {
+        navigate('/')
+        setIsLoading(false)
+      }, 500)
     }
   }
   return (
@@ -63,6 +69,7 @@ export const ResetPassword: FC = () => {
             className={styles.form__buttons_item}
             elementType='submit'
             ariaLabel={t('continue')}
+            isLoading={isLoading}
             onClick={validate}
           >
             {t('continue')}
