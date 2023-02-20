@@ -1,0 +1,74 @@
+h1 {
+  font: var(--h1-font);
+  margin: 10px 0;
+  letter-spacing: var(--h1-letter-spacing);
+
+  @include media-gte(sm) {
+    margin: 0 0 15px;
+  }
+}
+
+h2 {
+  font: --h2-font;
+  margin: 0 0 15px;
+  letter-spacing: var(--h2-letter-spacing);
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font: var(--h36-font);
+  letter-spacing: var(--h36-letter-spacing);
+}
+
+big,
+tt,
+abbr,
+acronym,
+kbd,
+samp,
+time,
+var,
+a,
+bdo,
+br,
+img,
+map,
+object,
+script,
+span,
+sub,
+sup,
+p,
+legend,
+button,
+input,
+label,
+select,
+textarea {
+  font: var(--base-font);
+  letter-spacing: var(--base-letter-spacing);
+}
+
+b,
+strong {
+  font: var(--bold-accent-font);
+  letter-spacing: var(--bold-accent-letter-spacing);
+}
+
+i,
+cite,
+q,
+dfn,
+em {
+  font: var(--accent-font);
+  letter-spacing: var(--accent-letter-spacing);
+}
+
+code {
+  background-color: #eee;
+  border-radius: 3px;
+  font-family: courier, monospace;
+  padding: 0 3px;
+}

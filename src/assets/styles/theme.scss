@@ -1,0 +1,104 @@
+:root {
+  // fonts
+  --font: 'Roboto', sans-serif;
+  --heading-font: 'Roboto', sans-serif;
+  --font-size-tabs: 13px;
+  --font-size-base: 16px;
+  --font-lh-base: 20px;
+  --font-base: var(--font-size-base) / var(--font-lh-base) var(--font);
+
+  // Heading fonts
+  --h1-font-size: 36px;
+  --h1-line-height: 40px;
+  --h1-font-weight: bold;
+  --h1-letter-spacing: -0.01em;
+  --h1-font: var(--h1-font-weight) var(--h1-font-size) / var(--h1-line-height)
+    var(--font);
+
+  --h2-font-size: 24px;
+  --h2-line-height: 32px;
+  --h2-font-weight: bold;
+  --h2-letter-spacing: -0.01em;
+  --h2-font: var(--h2-font-weight) var(--h2-font-size) / var(--h2-line-height)
+    var(--heading-font);
+
+  --h36-font-size: 20px;
+  --h36-line-height: 28px;
+  --h36-font-weight: 500;
+  --h36-letter-spacing: -0.01em;
+  --h36-font: var(--h36-font-weight) var(--h36-font-size) /
+    var(--h36-line-height) var(--heading-font);
+
+  --base-font-size: 16px;
+  --base-line-height: 20px;
+  --base-font-weight: 400;
+  --base-letter-spacing: -0.01em;
+  --base-font: var(--base-font-weight) var(--base-font-size) /
+    var(--base-line-height) var(--font);
+
+  --bold-accent-font-size: var(--base-font-size);
+  --bold-accent-line-height: var(--base-line-height);
+  --bold-accent-font-weight: bold;
+  --bold-accent-letter-spacing: var(--base-letter-spacing);
+  --bold-accent-font: var(--bold-accent-font-weight)
+    var(--bold-accent-font-size) / var(--bold-accent-line-height) var(--font);
+
+  --accent-font-size: var(--base-font-size);
+  --accent-line-height: var(--base-line-height);
+  --accent-font-weight: var(--base-font-weight);
+  --accent-font-style: italic;
+  --accent-letter-spacing: var(--base-letter-spacing);
+  --accent-font: var(--accent-font-style) var(--accent-font-weight)
+    var(--accent-font-size) / var(--accent-line-height) var(--font);
+
+  // colors
+  --base-color: #11152c;
+  --base-light: rgba(17, 21, 44, 0.3);
+  --black: #000;
+  --black-light: #707070;
+  --black-smooth: #2f4858;
+  --white: #fff;
+  --shadow-color: #fafafa;
+
+  // color gray
+  --gray: #f8f8f8;
+  --gray-light: #f5f6fa;
+  --gray-dark: #b8b9c0;
+  --gray-dark-deep: #11152c2e;
+  --gray-button: #909a95;
+
+  // color green
+  --green: #22b871;
+  --green-dark: #25a669;
+  --green-dark-deep: #269661;
+  --green-light: #4ec88e;
+  --green-bg: #e7f7ef;
+
+  // color blue
+  --blue: #4361ee;
+  --blue-dark: #2e4cd9;
+  --blue-deep-dark: #2240ce;
+  --light-blue: #79b1ff;
+  --blue-bg: #e5eaff;
+
+  // color orange
+  --orange: #fa9c57;
+  --orange-dark: #ec8b44;
+  --orange-deep-dark: #d77c39;
+  --orange-bg: #fef4ed;
+
+  // color red
+  --red: #ff3e49;
+  --red-light: #fc515a;
+  --red-dark: #f8646c;
+  --red-deep-dark: #e03943;
+  --red-bg: #ffe2e4;
+
+  // color text
+  --color-text-primary: #12162e;
+  --color-text-secondary: #b8b9c0;
+  --color-text-secondary-contrast: #888a96;
+
+  // color border
+  --color-border: #d4d5d9;
+}

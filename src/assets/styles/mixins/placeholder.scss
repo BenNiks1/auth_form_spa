@@ -1,0 +1,7 @@
+@mixin placeholder($color) {
+  &::placeholder {
+    font-weight: 500;
+    opacity: 1;
+    color: $color;
+  }
+}
