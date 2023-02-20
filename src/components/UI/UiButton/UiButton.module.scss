@@ -1,0 +1,33 @@
+.button {
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid var(--green-dark);
+  border-radius: 10px;
+  background-color: var(--green);
+  color: var(--white);
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background-color: var(--green-dark);
+  }
+
+  &:active {
+    background-color: var(--green);
+  }
+
+  &.base {
+    border: none;
+    background-color: transparent;
+    color: var(--blue);
+  }
+
+  &.secondary {
+    border: 1px solid var(--color-border);
+    background-color: transparent;
+    color: var(--base-color);
+
+    &:hover {
+      border: 1px solid var(--green);
+    }
+  }
+}

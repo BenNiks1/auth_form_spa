@@ -1,0 +1,148 @@
+@import '@/assets/styles/mixins/placeholder.scss';
+
+.input {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  min-height: 28px;
+  cursor: text;
+  transition: 0.3s ease-in-out;
+  transition-property: border-color;
+
+  &__label {
+    font-size: 12px;
+    line-height: 14px;
+    color: rgba(var(--base-color), 0.5);
+    display: block;
+    margin-bottom: 8px;
+    transition: all 0.3s;
+  }
+
+  &__password {
+    position: relative;
+    margin: 0 10px;
+    max-height: 24px;
+    border-radius: 5px;
+  }
+
+  &_floating_label & {
+    &__label {
+      color: var(--color-text-secondary);
+      top: 14px;
+      left: 20px;
+      z-index: 10;
+      position: absolute;
+      margin: 0;
+      font-weight: 500;
+      font-size: var(--font-size-base);
+      line-height: var(--font-lh-base);
+      pointer-events: none;
+
+      &::before {
+        background-color: var(--white);
+        content: '';
+        position: absolute;
+        left: -5px;
+        top: 0;
+        width: 0;
+        height: 100%;
+        z-index: -1;
+        transition: width 0.3s;
+      }
+    }
+  }
+
+  &_floating_label.has_value &,
+  &_floating_label.is_focused & {
+    &__label {
+      font-size: 12px;
+      line-height: 14px;
+      top: -9px;
+
+      &::before {
+        width: calc(100% + 10px);
+      }
+    }
+  }
+
+  &_floating_label.is_focused & {
+    &__label {
+      color: var(--base-color);
+    }
+  }
+
+  &__control {
+    width: 100%;
+  }
+
+  &__slot {
+    border-radius: 10px;
+    border: 1px solid var(--color-border);
+    transition: border #b8b9c0;
+
+    &:hover {
+      border-color: var(--green);
+    }
+  }
+
+  &.is_focused & {
+    &__slot {
+      border-color: var(--green-dark);
+    }
+  }
+
+  &.is_error & {
+    &__slot {
+      border-color: var(--red);
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    position: relative;
+  }
+
+  &__field {
+    font-size: var(--font-size-base);
+    line-height: var(--font-lh-base);
+    font-weight: 500;
+    flex: 1 1 auto;
+    padding: 14px 20px;
+    border-radius: 10px;
+    max-width: 100%;
+    width: 100%;
+    background-color: transparent;
+    position: relative;
+    z-index: 3;
+    color: var(--base-color);
+    display: block;
+    min-width: 50px;
+    border: none;
+    transition: 0.3s ease-in-out;
+    transition-property: padding-top, color;
+
+    @include placeholder(#b8b9c0);
+
+    &:focus {
+      outline: none;
+    }
+
+    &:disabled {
+      color: var(--color-text-secondary-contrast);
+    }
+  }
+
+  &__details {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(calc(100% + 2px));
+  }
+
+  &__error {
+    color: var(--red);
+    font-size: 12px;
+    line-height: 14px;
+  }
+}

@@ -1,0 +1,27 @@
+.form {
+  width: 100%;
+
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+  }
+
+  & .reset_pass {
+    padding: 15px 0;
+    width: unset;
+    margin-top: 5px;
+    align-self: flex-start;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 25px;
+    width: 100%;
+  }
+}
