@@ -51,7 +51,7 @@ export const UiForm: FC<FormProps> = ({
         </div>
         {children}
       </form>
-      <div className={styles.outer_form}>
+      <div className={cn(styles.outer_form, styles.desktop)}>
         <UiSelect
           options={options}
           defaultValue={localStorage.getItem('lang') || 'en'}

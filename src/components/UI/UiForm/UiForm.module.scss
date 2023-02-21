@@ -1,3 +1,5 @@
+@import '@/assets/styles/mixins.scss';
+
 .container {
   .form {
     display: flex;
@@ -13,18 +15,36 @@
     background-color: var(--white);
     box-shadow: 0 2px 5px 0 var(--base-light), 0 2px 10px 0 var(--base-light);
 
+    @include media-dtm(sm) {
+      padding: 20px;
+      border-radius: 0;
+      height: 100vh;
+      margin-bottom: 0;
+    }
+
     &__intro {
       text-align: center;
       margin-bottom: 40px;
 
       &_title {
         font-size: 24px;
+
+        @include media-dtm(sm) {
+          font-size: 20px;
+        }
       }
 
       &_description {
         font-size: 12px;
         color: var(--black-light);
       }
+    }
+  }
+  .desktop {
+    display: block;
+
+    @include media-dtm(sm) {
+      display: none;
     }
   }
 }

@@ -78,6 +78,7 @@ export const ResetPassword: FC = () => {
             className={styles.form__buttons_item}
             type='base'
             prevent
+            elementType='button'
             ariaLabel={t('back')}
             onClick={() => {
               navigate(AuthStep.AUTH_FORM)

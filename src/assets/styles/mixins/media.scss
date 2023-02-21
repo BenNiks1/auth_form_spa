@@ -13,7 +13,7 @@ $breakpoints: (
   @return $key;
 }
 
-@mixin media-gte($from) {
+@mixin media-mtd($from) {
   $min-width: get-breakpoint($from);
 
   @media (min-width: $min-width) {
@@ -21,7 +21,7 @@ $breakpoints: (
   }
 }
 
-@mixin media-lt($from) {
+@mixin media-dtm($from) {
   $max-width: get-breakpoint($from) - 1px;
 
   @media (max-width: $max-width) {
