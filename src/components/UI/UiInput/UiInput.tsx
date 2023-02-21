@@ -1,10 +1,10 @@
 import { ChangeEvent, FC, useState } from 'react'
-import cn from 'classnames'
 import { ReactComponent as ShowPassword } from '@/assets/static/svg/show_pass.svg'
 import { ReactComponent as HidePassword } from '@/assets/static/svg/hide_pass.svg'
-import styles from './UiInput.module.scss'
 import { DefaultTFuncReturn } from 'i18next'
 import { useTranslation } from 'react-i18next'
+import cn from 'classnames'
+import styles from './UiInput.module.scss'
 
 interface UiInputProps {
   label?: string | DefaultTFuncReturn
@@ -92,8 +92,8 @@ export const UiInput: FC<UiInputProps> = ({
                 onClick={() => setIsShowPassword(prev => !prev)}
                 aria-label={
                   isShowPassword
-                    ? (t('showPass') as string)
-                    : (t('hidePass') as string)
+                    ? (t('hidePass') as string)
+                    : (t('showPass') as string)
                 }
               >
                 {isShowPassword ? <ShowPassword /> : <HidePassword />}

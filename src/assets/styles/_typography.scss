@@ -3,7 +3,7 @@ h1 {
   margin: 10px 0;
   letter-spacing: var(--h1-letter-spacing);
 
-  @include media-gte(sm) {
+  @include media-mtd(sm) {
     margin: 0 0 15px;
   }
 }
